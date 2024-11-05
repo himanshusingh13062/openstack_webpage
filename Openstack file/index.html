@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>openstack project</title>
+  <link rel = 'icon' href = 'your website icon'>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body>
+    <h1>OpenStack</h1>
+
+    <div class="team">
+        <h2>Team Members</h2>
+        <p class="team-members">1.Himanshu Singh &emsp;  2.Sarthak Shivastav &emsp;  3.Aditiya Maiti &emsp;  4.Vigyat Goel</p>
+    </div>
+    
+
+    <div class="project-description">
+        <h2>About the Project</h2>
+        <p>
+            This project focuses on deploying and hosting a website using OpenStack and NGINX, demonstrating the capabilities of cloud infrastructure and web server management. OpenStack, an open-source platform for managing cloud environments, allows for scalable and flexible deployment, while NGINX acts as a high-performance web server. By leveraging OpenStack's computing power, the project establishes a reliable, self-hosted solution that includes creating instances, configuring NGINX for web content delivery, and optimizing resources for secure hosting. This setup showcases how cloud solutions can effectively power modern, scalable websites for various applications.
+        </p>
+    </div>
+
+    <div class="project-description">
+        <h2>About Openstack</h2>
+        <p>
+            OpenStack is an open-source platform for building and managing cloud infrastructures, providing a flexible way to deploy and control virtual machines, storage, and networking resources within a data center. Its modular architecture, including components like Nova for compute, Swift for storage, and Neutron for networking, allows organizations to create tailored cloud environments that scale easily. Popular among enterprises and IT professionals, OpenStack’s flexibility and robust community support make it an ideal choice for those seeking a customizable, vendor-neutral cloud solution for both private and public applications.
+        </p>
+        <div class="image-container">
+            <img class="openstack-image" src="https://cdn.freelogovectors.net/wp-content/uploads/2017/03/OpenStack_Logo.png" alt="Openstack image">
+        </div>
+        
+    </div>
+
+    <div class="steps">
+        <h2>Steps to Set Up OpenStack Cloud Using Microstack</h2>
+        <ol>
+            <li>Install Microstack by running the following commands in the Terminal:
+                <pre>
+sudo snap install microstack --devmode --beta
+                </pre>
+            </li>
+            <li>Initialize Microstack:
+                <pre>
+sudo microstack init --auto --control
+                </pre>
+            </li>
+            <li>Access the OpenStack dashboard by going to <code>http://your-server-ip/</code>.</li>
+            <li>credentials of Admin to Log in:
+                <pre>
+sudo snap get microstack config.credentials.keystone-password
+                </pre>
+            </li>
+            <li>To create a new instance, go to <strong>Compute &gt; Instances &gt; Launch Instance</strong>.</li>
+            <li>Choose a name, select an image, assign a flavor, and configure network settings.</li>
+            <li>Launch the instance and check its status in the dashboard.</li>
+            <li>Use SSH to access the instance using the IP address assigned.
+                <pre>
+ssh -i /path/to/private_key username@instance_ip_address
+                </pre>
+
+            </li>
+        </ol>
+
+        <div class="image-container">
+            <img class="ubuntu-image" src="https://pluspng.com/img-png/ubuntu-logo-png-ubuntu-icon-logo-png-transparent-amp-svg-vector-pluspng-2400x2390.png" width ="300" height="300" alt="Ubuntu image">
+        </div>
+    </div>
+
+</body>
+
+</html>
