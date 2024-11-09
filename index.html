@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>openstack project</title>
+  <link rel = 'icon' href = 'your website icon'>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body>
+    <h1>OpenStack</h1>
+
+    <div class="team">
+        <h2>Team Members</h2>
+        <p class="team-members">1.Himanshu Singh(021) &emsp;  2.Saarthak Srivastav(052) &emsp;  3.Aditya Maiti(038) &emsp;  4.Vigyat Goel(041)</p>
+    </div>
+    
+
+    <div class="project-description">
+        <h2>About the Project</h2>
+        <p>
+            This project focuses on deploying and hosting a website using OpenStack and a Python server, demonstrating the capabilities of private cloud infrastructure and web server management. OpenStack, an open-source platform for managing cloud environments, allows for scalable and flexible deployment, while the Python server provides a simple and efficient backend for handling requests and serving content. By leveraging OpenStack's computing power, the project establishes a reliable, self-hosted solution that includes creating instances, configuring the Python server for web content delivery, and optimizing resources for secure hosting. This setup showcases how cloud solutions can effectively power modern, scalable websites for various applications.
+        </p>
+    </div>
+
+    <div class="project-description">
+        <h2>About Openstack</h2>
+        <p>
+            OpenStack is an open-source platform for building and managing cloud infrastructures, providing a flexible way to deploy and control virtual machines, storage, and networking resources within a data center. Its modular architecture, including components like Nova for compute, Swift for storage, and Neutron for networking, allows organizations to create tailored cloud environments that scale easily. Popular among enterprises and IT professionals, OpenStack’s flexibility and robust community support make it an ideal choice for those seeking a customizable, vendor-neutral cloud solution for both private and public applications.
+        </p>
+        <div class="image-container">
+            <img class="openstack-image" src="https://cdn.freelogovectors.net/wp-content/uploads/2017/03/OpenStack_Logo.png" alt="Openstack image">
+        </div>
+        
+    </div>
+
+    <div class="project-description">
+        <h2>About DevStack</h2>
+        <p>
+            This project uses Devstack for OpenStack deployment. Devstack is a tool used to quickly set up an OpenStack development environment. It provides a simple way to install and configure a minimal OpenStack deployment on a single machine, which is useful for developers testing OpenStack features or exploring its capabilities.
+        </p>
+        <img class="devstack-image" src="https://etoews.github.io/img/posts/devstack.png" alt="devsatck image">
+    </div>
+
+
+    <div class="prerequisites" >
+        <h2>Pre-requisites</h2>
+        <ol>
+            <li>Ubuntu 22.04 LTS</li>
+            <li>Atleast 16 GB ram</li>
+            <li>Atleast 50 GB storage</li>
+        </ol>
+    </div>
+
+    <div class="steps">
+        <h2>Steps to set up OpenStack cloud using DevStack</h2>
+        <ol>
+            <li>Update your system:
+                <pre>
+sudo apt update && sudo apt upgrade -y</pre>
+            </li>
+            <li>Download DevStack by running the following commands in the Terminal:
+                <pre>
+git clone https://opendev.org/openstack/devstack
+cd devstack</pre>
+            </li>
+            <li>Create a local.conf file and paste the following init:
+                <pre>
+[[local|localrc]]
+ADMIN_PASSWORD=secret
+DATABASE_PASSWORD=$ADMIN_PASSWORD
+RABBIT_PASSWORD=$ADMIN_PASSWORD
+SERVICE_PASSWORD=$ADMIN_PASSWORD</pre>
+            <li>Start the install:
+                <pre>
+./stack.sh</pre>
+           
+        </ol>
+
+        <div class="image-container">
+            <img class="ubuntu-image" src="https://pluspng.com/img-png/ubuntu-logo-png-ubuntu-icon-logo-png-transparent-amp-svg-vector-pluspng-2400x2390.png" width ="300" height="300" alt="Ubuntu image">
+        </div>
+    </div>
+
+    <div class="steps">
+        <h2>Steps after installation</h2>
+        <ol>
+            <li>Access the OpenStack dashboard (horizon) by going to <pre>http://your-server-ip/</pre>
+            <p class="note">Note: Default username is "admin" and default password is "secret".</p></li>
+            <li>
+                Create a new virtual machine:
+
+                <pre>
+create a new instance by going to "instance tab" and launch a new instance.
+choose floavor and other configuration of your choice.</pre>
+            </li>
+            <li>
+                Assign a floating ip to your virtual machine.
+            </li>
+            <li>
+                Edit the default security group and add a new SSH rule.
+            </li>
+            <li>
+                Access the virtual machine:
+                <pre>
+ssh -i [your_key.pem] ubuntu@[your_floating_ip]</pre>
+            </li>
+            <li>
+                Stop DevStack:
+                <pre>
+./unstack.sh</pre>
+            </li>
+            <li>
+                Clean the local DevStack environment:
+                <pre>./clean.sh</pre>
+                <p class="note">Note: this will delete all your instances.</p>
+            </li>
+        </ol>
+    </div>
+    <div class="steps">
+        <h2>Deploy website on virtual machine</h2>
+        <ol>
+            <li>Update your system:
+                <pre>
+sudo apt update && sudo apt upgrade -y</pre>
+            </li>
+            <li>
+                Clone your github repository:
+                <pre>git clone https://github.com/[your_github_username]/[your_repository_name].git
+cd your_repository_name</pre>
+
+            </li>
+            <li>
+                Start the python web-server:
+                <pre>python3 -m http.server 80</pre>
+            </li>
+            <li>
+                Access your website:
+                <pre>http://your_floating_ip/</pre>
+            </li>
+        </ol>
+
+    </div>
+
+</body>
+
+</html>
